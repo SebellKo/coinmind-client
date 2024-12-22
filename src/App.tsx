@@ -1,9 +1,18 @@
+import styled from 'styled-components';
+import Header from './components/common/Header';
+
 function App() {
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <Home>
+      <Header />
+    </Home>
   );
 }
+
+const Home = styled.div`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+`;
 
 export default App;
