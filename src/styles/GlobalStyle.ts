@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`${reset}
     button {
+        background: none;
         outline: none;
         border: 0;
         cursor: pointer;
