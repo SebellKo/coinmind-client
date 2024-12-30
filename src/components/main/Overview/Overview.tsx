@@ -5,6 +5,7 @@ import LongShortChart from './charts/LongShortChart';
 import UpbitCoinPriceChart from './charts/UpbitCoinPriceChart';
 import LongShortVolumeChart from './charts/LongShortVolumeChart';
 import CommunityShareChart from './charts/CommunityShareChart';
+import SectionTitle from '../../../styles/components/SectionTitle';
 
 function Overview() {
   return (
@@ -20,19 +21,11 @@ function Overview() {
   );
 }
 
-const SectionTitle = styled.h1`
-  color: #000;
-  font-size: 32px;
-  font-weight: 700;
-`;
-
 const ChartsWrapper = styled.div`
   width: 100%;
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   gap: 40px 30px;
 `;
 
