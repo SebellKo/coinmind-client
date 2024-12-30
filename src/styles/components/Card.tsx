@@ -14,7 +14,13 @@ const CardContainer = styled.div<{
   $type: string;
 }>`
   ${({ $type }) => {
+    if ($type === 'chart') return 'width: 581px;';
+    if ($type === 'tweet') return 'width: 380px;';
+  }}
+
+  ${({ $type }) => {
     if ($type === 'chart') return 'padding: 35px 42px';
+    if ($type === 'tweet') return 'padding: 26px 20px';
   }};
   border-radius: 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2),
