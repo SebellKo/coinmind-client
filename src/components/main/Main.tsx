@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import Overview from './Overview/Overview';
 import Tweet from './Tweet/Tweet';
+import News from './News/News';
 
 function Main() {
   return (
     <MainContainer>
       <Overview></Overview>
       <Tweet></Tweet>
+      <News></News>
     </MainContainer>
   );
 }
