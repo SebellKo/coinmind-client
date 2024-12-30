@@ -57,7 +57,7 @@ const ChartActiveButton = styled.button`
 `;
 
 const ChartArea = styled.div`
-  width: 620px;
+  width: 100%;
   height: 360px;
 
   background: bisque;
