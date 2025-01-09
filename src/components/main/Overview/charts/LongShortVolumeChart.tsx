@@ -9,8 +9,11 @@ import ButtonsWrapper from '../../../../styles/components/chart/Wrapper/ButtonsW
 import ContentsWrapper from '../../../../styles/components/chart/Wrapper/ContentsWrapper';
 import DetailAndButtonsWrapper from '../../../../styles/components/chart/Wrapper/DetailAndButtonsWrapper';
 import DetailWrapper from '../../../../styles/components/chart/Wrapper/DetailWrapper';
+import { useState } from 'react';
 
 function LongShortVolumeChart() {
+  const [isClickCoinButton, setIsClickCoinButton] = useState<boolean>(false);
+
   return (
     <Card $type="chart">
       <ContentsWrapper>
@@ -24,7 +27,10 @@ function LongShortVolumeChart() {
           </DetailWrapper>
           <ButtonsWrapper>
             <TimeButton></TimeButton>
-            <SelectCoinButton></SelectCoinButton>
+            <SelectCoinButton
+              isClick={isClickCoinButton}
+              setIsClick={setIsClickCoinButton}
+            ></SelectCoinButton>
           </ButtonsWrapper>
         </DetailAndButtonsWrapper>
         <ChartArea></ChartArea>

@@ -1,19 +1,27 @@
 import styled from 'styled-components';
 
 import DropDownArrow from '/assets/images/arrow-drop-down.svg';
+import { Dispatch, SetStateAction } from 'react';
 
-function SelectCoinButton() {
+interface Props {
+  isClick: boolean;
+  setIsClick: Dispatch<SetStateAction<boolean>>;
+}
+
+function SelectCoinButton({ isClick, setIsClick }: Props) {
   return (
     <SelectCoinWrapper>
-      <SelectCoinDropDown>
+      <SelectCoinDropDown onClick={() => setIsClick((prev) => !prev)}>
         <p>Coin</p>
         <img src={DropDownArrow} alt="drop-down-arrow"></img>
       </SelectCoinDropDown>
-      <SelectCoinDropDownMenu>
-        <SelectCoinItem>비트코인</SelectCoinItem>
-        <SelectCoinItem>폴리곤에코시스템토큰</SelectCoinItem>
-        <SelectCoinItem>이더리움네임클래식</SelectCoinItem>
-      </SelectCoinDropDownMenu>
+      {isClick && (
+        <SelectCoinDropDownMenu>
+          <SelectCoinItem>비트코인</SelectCoinItem>
+          <SelectCoinItem>폴리곤에코시스템토큰</SelectCoinItem>
+          <SelectCoinItem>이더리움네임클래식</SelectCoinItem>
+        </SelectCoinDropDownMenu>
+      )}
     </SelectCoinWrapper>
   );
 }

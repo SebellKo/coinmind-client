@@ -9,8 +9,11 @@ import ContentsWrapper from '../../../../styles/components/chart/Wrapper/Content
 import DetailAndButtonsWrapper from '../../../../styles/components/chart/Wrapper/DetailAndButtonsWrapper';
 import DetailWrapper from '../../../../styles/components/chart/Wrapper/DetailWrapper';
 import ButtonsWrapper from '../../../../styles/components/chart/Wrapper/ButtonsWrapper';
+import { useState } from 'react';
 
 function CommunityShareChart() {
+  const [isClickCoinButton, setIsClickCoinButton] = useState<boolean>(false);
+
   return (
     <Card $type="chart">
       <ContentsWrapper>
@@ -24,7 +27,10 @@ function CommunityShareChart() {
           </DetailWrapper>
           <ButtonsWrapper>
             <TimeButton></TimeButton>
-            <SelectCoinButton></SelectCoinButton>
+            <SelectCoinButton
+              isClick={isClickCoinButton}
+              setIsClick={setIsClickCoinButton}
+            ></SelectCoinButton>
           </ButtonsWrapper>
         </DetailAndButtonsWrapper>
         <ChartArea></ChartArea>

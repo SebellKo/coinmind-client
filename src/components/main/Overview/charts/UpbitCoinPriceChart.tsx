@@ -10,8 +10,11 @@ import ContentsWrapper from '../../../../styles/components/chart/Wrapper/Content
 import DetailAndButtonsWrapper from '../../../../styles/components/chart/Wrapper/DetailAndButtonsWrapper';
 import DetailWrapper from '../../../../styles/components/chart/Wrapper/DetailWrapper';
 import ChartDescription from '../../../../styles/components/chart/Text/ChartDescription';
+import { useState } from 'react';
 
 function UpbitCoinPriceChart() {
+  const [isClickCoinButton, setIsClickCoinButton] = useState<boolean>(false);
+
   return (
     <Card $type="chart">
       <ContentsWrapper>
@@ -27,7 +30,10 @@ function UpbitCoinPriceChart() {
           </DetailWrapper>
           <ButtonsWrapper>
             <TimeButton></TimeButton>
-            <SelectCoinButton></SelectCoinButton>
+            <SelectCoinButton
+              isClick={isClickCoinButton}
+              setIsClick={setIsClickCoinButton}
+            ></SelectCoinButton>
           </ButtonsWrapper>
         </DetailAndButtonsWrapper>
         <ChartArea></ChartArea>

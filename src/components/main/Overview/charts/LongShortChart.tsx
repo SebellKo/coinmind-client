@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 import Check from '/assets/images/check-box-icon.svg';
 
@@ -13,6 +14,8 @@ import DetailAndButtonsWrapper from '../../../../styles/components/chart/Wrapper
 import DetailWrapper from '../../../../styles/components/chart/Wrapper/DetailWrapper';
 
 function LongShortChart() {
+  const [isClickCoinButton, setIsClickCoinButton] = useState<boolean>(false);
+
   return (
     <Card $type="chart">
       <ContentsWrapper>
@@ -26,7 +29,10 @@ function LongShortChart() {
           </DetailWrapper>
           <ButtonsWrapper>
             <TimeButton></TimeButton>
-            <SelectCoinButton></SelectCoinButton>
+            <SelectCoinButton
+              setIsClick={setIsClickCoinButton}
+              isClick={isClickCoinButton}
+            ></SelectCoinButton>
             <ChartActiveButton>
               <p>on/off</p>
               <img src={Check} alt="check-box-icon"></img>
